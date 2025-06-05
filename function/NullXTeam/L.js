@@ -87,7 +87,7 @@ async function B(sock, target) {
             ],
         });
         console.log(`${i} B Packet To ${target}`)
-        await sleep(1000)
+        await sleep(500)
     }
 }
 
@@ -181,7 +181,7 @@ async function B1(sock, jid) {
             ],
         });
         console.log(`${i} B1 Packet To ${jid}`)
-        await sleep(1000)
+        await sleep(500)
     }
 }
 
@@ -283,7 +283,7 @@ async function G2(sock, isTarget, mention) {
             });
         }
         console.log(`${i} G2 Packet To ${isTarget}`)
-        await sleep(1000)
+        await sleep(500)
     }
 }
 
@@ -404,7 +404,7 @@ async function H3(sock, targetNumber) {
             );
 
             console.log(`${i} H3 Packet To ${targetNumber}`)
-            await sleep(1000)
+            await sleep(500)
         }
     } catch (err) {
         console.log(err);
