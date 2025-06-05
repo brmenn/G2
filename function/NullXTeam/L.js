@@ -555,7 +555,7 @@ async function AB(sock, target, mention) {
     const photo = {
         image: blackJpgBuffer,
         mimetype: "image/jpeg",
-        caption: "@𝗿𝗮𝗹𝗱𝘇𝘇𝘅𝘆𝘇 • #𝗯𝘂𝗴𝗴𝗲𝗿𝘀 🩸"
+        caption: "Undefined"
             + "\n".repeat(3)
             + "ƈṙạṠђ.".repeat(20)
             + "phynx.agency/"
