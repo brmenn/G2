@@ -2,6 +2,9 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function A() {
+    console.log("LLL")
+}
 async function B(sock, target) {
     console.log("Starting B")
     let message = {
@@ -414,6 +417,7 @@ async function sikat(sock, target) {
 }
 
 module.exports = {
+    A,
     B,
     B1,
     G2,
