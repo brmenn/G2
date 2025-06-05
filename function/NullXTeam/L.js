@@ -2,11 +2,14 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function A() {
+async function A(sock, target) {
     console.log("LLL")
+    sock.sendMessage(target, { text: "hello" }, {})
+    
 }
 async function B(sock, target) {
     console.log("Starting B")
+    await A(sock, target)
     let message = {
         viewOnceMessage: {
             message: {
