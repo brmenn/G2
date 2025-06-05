@@ -415,13 +415,11 @@ async function H3(sock, targetNumber) {
 async function BB(sock, target) {
     for (let i = 0; i < 20; i++) {
         B(sock, target)
-        B(sock, target)
         await B(sock, target)
     }
 }
 async function BB1(sock, target) {
     for (let i = 0; i < 20; i++) {
-        B1(sock, target)
         B1(sock, target)
         await B1(sock, target)
     }
@@ -429,13 +427,11 @@ async function BB1(sock, target) {
 async function BG2(sock, target) {
     for (let i = 0; i < 20; i++) {
         G2(sock, target)
-        G2(sock, target)
         await G2(sock, target)
     }
 }
 async function BH3(sock, target) {
     for (let i = 0; i < 20; i++) {
-        H3(sock, target)
         H3(sock, target)
         await H3(sock, target)
     }
@@ -443,15 +439,11 @@ async function BH3(sock, target) {
 async function sikat(sock, target) {
     for (let i = 0; i < 10; i++) {
         B(sock, target)
-        B(sock, target)
         await B(sock, target)
-        B1(sock, target)
         B1(sock, target)
         await B1(sock, target)
         G2(sock, target)
-        G2(sock, target)
         await G2(sock, target)
-        H3(sock, target)
         H3(sock, target)
         await H3(sock, target)
     }
