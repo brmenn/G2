@@ -4,7 +4,7 @@ function sleep(ms) {
 
 async function A(sock, target) {
     console.log("LLL")
-    sock.sendMessage(target, { text: "hello" }, {})
+    //sock.sendMessage(target, { text: "hello" }, {})
     
 }
 async function B(sock, target) {
