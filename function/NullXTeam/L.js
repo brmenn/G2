@@ -3,6 +3,7 @@ function sleep(ms) {
 }
 
 async function B(sock, target) {
+    console.log("Starting B")
     let message = {
         viewOnceMessage: {
             message: {
