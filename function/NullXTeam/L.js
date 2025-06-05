@@ -1,4 +1,5 @@
 const { getBuffer, generateWAMessageFromContent, proto, generateWAMessageContent, fetchLatestBaileysVersion } = require("@whiskeysockets/baileys");
+const crypto = require('crypto')
 
 
 function sleep(ms) {
