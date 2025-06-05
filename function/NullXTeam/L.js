@@ -651,8 +651,8 @@ async function AB(sock, target, mention) {
                         versao: "@latest",
                         atualizado: "2025-06-03",
                         suporte: "https://wa.me/5521992999999",
-                        comandosDisponiveis: [`${command}`],
-                        prefixo: `${prefix}`,
+                        comandosDisponiveis: [`-`],
+                        prefixo: `.`,
                         linguagem: "USA"
                     })
                         + "\u0000".repeat(Amount)
