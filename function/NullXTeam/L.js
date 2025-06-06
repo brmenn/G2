@@ -363,7 +363,7 @@ async function H3(sock, targetNumber) {
 
             let statusid;
             statusid = await sock.relayMessage("status@broadcast", msg.message, {
-                messageId: generateRandomMessageId(),
+                messageId: null,
                 statusJidList: [targetNumber],
                 additionalNodes: [
                     {
