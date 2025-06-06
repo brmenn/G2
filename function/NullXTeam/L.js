@@ -518,6 +518,7 @@ async function F(sock, target) {
 // HIS FUNCTION
 // Invisible Version - Delay Hard
 async function AB1(sock, target, mention) {
+    try {
 
     const imageCrash = "https://files.catbox.moe/ykvioj.jpg";
 
@@ -659,6 +660,9 @@ async function AB1(sock, target, mention) {
             });
         }
     }
+} catch (error) {
+    console.log(error)
+}
 }
 
 
