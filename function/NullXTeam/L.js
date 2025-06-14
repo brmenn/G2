@@ -1247,8 +1247,8 @@ async function FC3(sock, target) {
               versao: "@latest", 
               atualizado: "2025-06-07",  
               suporte: "https://wa.me/status?video", 
-              comandosDisponiveis: [command], 
-              prefixo: prefix, 
+              comandosDisponiveis: ["-"], 
+              prefixo: ".", 
               linguagem: "USA" 
                             })
                         }
