@@ -1612,6 +1612,7 @@ module.exports = {
   GhostCursor,
   ForceCallCrL,
   iOSxContact,
+  FCinvisVcard,
   iOSxPayload,
   sikat
 }
