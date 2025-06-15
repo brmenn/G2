@@ -1460,7 +1460,7 @@ async function FCinvisVcard(sock, target, mention) {
     extendedTextMessage: {
       text: "-",
       contextInfo: {
-        stanzaId: generateMessageID(),
+        //stanzaId: generateMessageID(),
         participant: "0@s.whatsapp.net",
         quotedMessage: {
           contactMessage: {
